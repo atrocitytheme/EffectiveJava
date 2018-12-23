@@ -16,6 +16,9 @@ Conslusion: Generally speaking,
   the programmer should be alert for memory leaks
 * Another common source of memory leaks is caches
 * A third common source of memory leaks is listeners and other callbacks
+
+Weak Reference solution: 
+e.g: WeakHashMap
 * */
 public class Stack {
     private Object[] elements;
