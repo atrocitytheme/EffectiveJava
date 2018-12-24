@@ -4,8 +4,13 @@ import java.util.Map;
 import java.util.WeakHashMap;
 /*
 weak memory for cache to avoid memory leak process
+
 for query of weak/strong reference, check 
 https://javarevisited.blogspot.com/2014/03/difference-between-weakreference-vs-softreference-phantom-strong-reference-java.html
+
+for more information on garbage collection, see:
+
+https://www.cnblogs.com/sunniest/p/4575144.html
 */
 public class WeakMap {
     public static void main(String[] args) {
