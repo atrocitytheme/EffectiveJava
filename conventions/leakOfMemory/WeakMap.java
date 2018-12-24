@@ -11,6 +11,9 @@ https://javarevisited.blogspot.com/2014/03/difference-between-weakreference-vs-s
 for more information on garbage collection, see:
 
 https://www.cnblogs.com/sunniest/p/4575144.html
+
+for types of leak, see: 
+https://www.jianshu.com/p/54b5da7c6816
 */
 public class WeakMap {
     public static void main(String[] args) {
