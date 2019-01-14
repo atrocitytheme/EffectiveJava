@@ -109,7 +109,8 @@ public class HashCode {
            result = 31 * result + prefix;
            result = 31 * result + lineNumber;
            hashCode = result;
-}
+       }
+       
        return result;
    }
 

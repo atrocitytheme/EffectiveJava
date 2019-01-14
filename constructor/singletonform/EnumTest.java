@@ -30,6 +30,5 @@ public class EnumTest {
 
     public static void main(String[] args) {
         EnumTest firstDay = new EnumTest(Day.MONDAY);
-
     }
 }
