@@ -14,6 +14,8 @@ integer results
 * */
 
 
+import java.util.Objects;
+
 public class HashCode {
     public static void main(String[] args) {
 
@@ -30,13 +32,19 @@ public class HashCode {
         System.out.println("1111111111111111111111111111111".length());
 
 //        int c = 0L; // error: c should be int
-        long c = 0L;
+//        long c = 0L;
 
         System.out.println(Float.floatToIntBits(0.15625f)); // 1042284544
         System.out.println(Integer.toBinaryString(1042284544));
         System.out.println("111110001000000000000000000000".length()); // ignore two zeros
 
         System.out.println(Double.doubleToLongBits(0.15626d)); // same above but in 64 bits format
+
+        V1 v1 = new V1();
+        V2 v2 = new V2();
+
+        System.out.println(v1.hashCode());
+        System.out.println(v2.hashCode());
     }
 }
 
@@ -109,10 +117,43 @@ public class HashCode {
            result = 31 * result + prefix;
            result = 31 * result + lineNumber;
            hashCode = result;
-       }
-       
+        }
        return result;
    }
 
 
 * */
+
+//simple version
+
+class V1 {
+    private String t = "1s";
+    private long host = 10;
+    private short host1 = 2;
+    private float host2 = 1.2f;
+    private double host3 = 1.3f;
+    // naive way
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result = 31 * result + (int) (host ^ (host >>> 32));
+        result = 31 * result + (int) host1;
+        result = 31 * result + Float.floatToIntBits(host2);
+        result = 31 * result + (int) Double.doubleToLongBits(host3);
+
+        return result;
+    }
+}
+
+class V2 {
+    private String t = "1s";
+    private long host = 10;
+    private short host1 = 2;
+    private float host2 = 1.2f;
+    private double host3 = 1.3f;
+    // simple way
+    @Override
+    public int hashCode() {
+        return Objects.hash(host, host1, host2, host3);
+    }
+}
