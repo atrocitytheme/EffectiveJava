@@ -1,10 +1,13 @@
-/*
+/**
 * https://dzone.com/articles/favour-skeletal-interface-in-java
 *
 * https://stackoverflow.com/questions/12891211/are-utility-classes-allowed-with-the-single-responsibility-principle-srp
 * https://stackoverflow.com/questions/3340032/utility-classes-are-evil
 * interface with default methods is better than utility class
-* The skeletal implementatoin can also be replaced by default method in interfae in release of jdk8
+* The skeletal implementatoin can also be replaced by default method in interfae in release of jdk8,
+that is, functionally abstract class is currently replacable by interface, 
+but Once an interface is released and widely implemented (interfaces are made to be widely implemented), it is almost impossible to change,
+    we can still use abstract class as a symbol of a specific skeletal impl
 * */
 
 interface Ivenging {
